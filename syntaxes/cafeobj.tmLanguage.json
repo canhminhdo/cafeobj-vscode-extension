@@ -1,0 +1,124 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "cafeobj",
+	"fileTypes": ["maude", "obj"],
+	"patterns": [
+		{
+			"include": "#toplevel"
+		},
+		{
+			"include": "#base"
+		}
+	],
+	"repository": {
+		"base": {
+			"patterns": [
+				{
+					"include": "#comment"
+				},
+				{
+					"match": "\\b(-?\\d+(/\\d+|(\\.\\d+)?([eE]-?\\d+(\\.\\d+)?)?)?)\\b",
+					"name": "constant.numeric.cafe"
+				},
+				{
+					"name": "constant.language.bool.cafe",
+					"match": "\\b(true|false)\\b"
+				},
+				{
+					"name": "keyword.operator.bool.cafe",
+					"match": "(=/?=|\\b(if|then|else|fi|and|or|xor|not|implies)\\b)"
+				},
+				{
+					"match": "\\b(CHAR-VALUE|FLOAT-VALUE|ID|INT-VALUE|NAT-VALUE|NZNAT-VALUE|RAT-VALUE|STRING-VALUE|TRIV|TRUTH-VALUE)\\b",
+					"name": "support.type.module.cafe"
+				},
+				{
+					"match": "\\b(Nat|NzNat|Int|String|Bool|Elt)\\b",
+					"name": "support.type.sort.cafe"
+				},
+				{
+					"match": "\\b(s|p|quo|rem|divides|<|>|>=|<=)\\b",
+					"name": "support.type.operator.cafe"
+				},
+				{
+					"match": "\\b(mod(!|\\*)?|eval|view)\\b",
+					"name": "keyword.control.cafe"
+				},
+				{
+					"match": "[,.:<>\\(\\)\\[\\]\\{\\}]",
+					"name": "punctuation.other.cafe"
+				}
+			]
+		},
+		"toplevel": {
+			"patterns": [
+				{
+					"include": "#module"
+				},
+				{
+					"include": "#command"
+				}
+			]
+		},
+		"comment": {
+			"patterns": [
+				{
+					"include": "#comment-line"
+				},
+				{
+					"include": "#comment-block"
+				}
+			]
+		},
+		"comment-line": {
+			"name": "comment.line",
+			"begin": "\\s*(--|-->|\\*\\*|\\*\\*>)",
+			"end": "$"
+		},
+		"comment-block": {
+			"name": "comment.block",
+			"begin": "\\s*#\\|",
+			"end": "\\|#$"
+		},
+		"module": {
+			"patterns": [
+				{
+					"begin": "\\b(mod(!|\\*)?)\\s+([^\\{\\s]+(?:\\{.+\\})?)\\s+(\\{)\\b",
+					"beginCaptures": {
+						"1": {
+						"name": "keyword.control.module.cafe"
+						},
+						"2": {
+						"name": "entity.name.type.module.cafe"
+						},
+						"3": {
+						"name": "keyword.control.module.cafe"
+						}
+					},
+					"end": "\\b(\\})\\b",
+					"endCaptures": {
+						"1": {
+						"name": "keyword.control.module.cafe"
+						}
+					},
+					"name": "meta.module.mod.cafe",
+					"patterns": [
+						{
+						"include": "#import"
+						},
+						{
+						"include": "#declaration"
+						},
+						{
+						"include": "#statement"
+						},
+						{
+						"include": "#base"
+						}
+					]
+				}
+			]
+		}
+	},
+	"scopeName": "source.cafe"
+}

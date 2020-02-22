@@ -1,0 +1,16 @@
+{
+	"iconDefinitions": {
+		"_cafeobj": {
+			"iconPath": "./cafeobj.png"
+        },
+	},
+	"fileExtensions": {
+		"cafe": "_cafeobj",
+	},
+	"fileNames": {
+
+	},
+	"languageIds": {
+		"cafeobj": "_cafeobj"
+	}
+}
