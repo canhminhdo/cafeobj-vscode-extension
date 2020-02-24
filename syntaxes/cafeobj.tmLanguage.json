@@ -1,7 +1,10 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "cafeobj",
-	"fileTypes": ["maude", "obj"],
+	"fileTypes": [
+		"maude",
+		"obj"
+	],
 	"patterns": [
 		{
 			"include": "#toplevel"
@@ -71,51 +74,118 @@
 			]
 		},
 		"comment-line": {
-			"name": "comment.line",
+			"name": "comment.line.cafe",
 			"begin": "\\s*(--|-->|\\*\\*|\\*\\*>)",
 			"end": "$"
 		},
 		"comment-block": {
-			"name": "comment.block",
+			"name": "comment.block.cafe",
 			"begin": "\\s*#\\|",
 			"end": "\\|#$"
 		},
 		"module": {
 			"patterns": [
 				{
-					"begin": "\\b(mod(!|\\*)?)\\s+([^\\{\\s]+(?:\\{.+\\})?)\\s+(\\{)\\b",
+					"begin": "(mod(?:ule)?(?:!|\\*)?)\\s+([^,.;\\[\\]\\(\\)\\{\\}\\s]+(?:\\{[^,.;\\[\\]\\(\\)\\{\\}\\s]+\\})?)\\s+(\\{)",
 					"beginCaptures": {
 						"1": {
-						"name": "keyword.control.module.cafe"
+							"name": "keyword.control.module.cafe"
 						},
 						"2": {
-						"name": "entity.name.type.module.cafe"
+							"name": "entity.name.type.module.cafe"
 						},
 						"3": {
-						"name": "keyword.control.module.cafe"
+							"name": "keyword.control.module.cafe"
 						}
 					},
-					"end": "\\b(\\})\\b",
+					"end": "(\\})",
 					"endCaptures": {
 						"1": {
-						"name": "keyword.control.module.cafe"
+							"name": "keyword.control.module.cafe"
 						}
 					},
 					"name": "meta.module.mod.cafe",
 					"patterns": [
 						{
-						"include": "#import"
+							"include": "#import"
 						},
 						{
-						"include": "#declaration"
+							"include": "#declaration"
 						},
 						{
-						"include": "#statement"
+							"include": "#statement"
 						},
 						{
-						"include": "#base"
+							"include": "#base"
 						}
 					]
+				}
+			]
+		},
+		"import": {
+			"begin": "(inc(?:luding)?|ex(?:tending)?|pr(?:otecting)?|us(?:ing)?)\\s*(\\()",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.import.cafe"
+				},
+				"2": {
+					"name": "punctuation.beginning.cafe"
+				}
+			},
+			"end": "(\\))\\s*(\\.)?",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.terminator.cafe"
+				}
+			},
+			"name": "meta.import.module.cafe",
+			"patterns": [
+				{
+					"include": "#identifier"
+				}
+			]
+		},
+		"identifier": {
+			"patterns": [
+				{
+					"match": "([^,.;\\[\\]\\(\\)\\{\\}\\s]+(?:\\{[^,.;\\[\\]\\(\\)\\{\\}\\s]+\\})?)",
+					"name": "entity.name.type.module.cafe"
+				}
+			]
+		},
+		"declaration": {
+			"patterns": [
+				{
+					"include": "#sort"
+				},
+				{
+					"include": "#subsort"
+				},
+				{
+					"include": "#operator"
+				},
+				{
+					"include": "#variable"
+				}
+			]
+		},
+		"sort": {
+			"begin": "^\\s*([)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.beginning.cafe"
+				}
+			},
+			"end": "(\\])\\s*(\\.)?",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.terminator.cafe"
+				}
+			},
+			"name": "meta.definition.sort.cafe",
+			"patterns": [
+				{
+					"include": "#identifier"
 				}
 			]
 		}
