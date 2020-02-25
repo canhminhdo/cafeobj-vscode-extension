@@ -1,7 +1,7 @@
 {
-    "name": "language-cafeobj",
-    "displayName": "language-cafeobj",
-    "description": "Language Cafeobj Support for VS Code",
+    "name": "cafeobj",
+    "displayName": "CafeOBJ",
+    "description": "Language Cafeobj Support",
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.42.0"
@@ -14,31 +14,36 @@
     "contributes": {
         "iconThemes": [
             {
-                "id": "vs-cafeobj",
-                "label": "Cafeobj (Visual Studio Code)",
+                "id": "icon-cafeobj",
+                "label": "Cafeobj Icon",
                 "path": "./icons/vs-cafeobj-icon-theme.json"
             }
         ],
         "languages": [
             {
                 "id": "cafeobj",
-                "aliases": ["CafeOBJ", "cafeobj"],
-                "extensions": [".cafe"],
+                "aliases": [
+                    "CafeOBJ",
+                    "cafeobj"
+                ],
+                "extensions": [
+                    ".cafe"
+                ],
                 "configuration": "./language-configuration.json"
             }
         ],
         "grammars": [
             {
                 "language": "cafeobj",
-                "scopeName": "source.cafe",
+                "scopeName": "source.cafeobj",
                 "path": "./syntaxes/cafeobj.tmLanguage.json"
             }
         ],
         "snippets": [
-			{
-				"language": "maude",
-				"path": "./snippets/snippets.json"
-			}
-		]
+            {
+                "language": "cafeobj",
+                "path": "./snippets/cafeobj.snippets.json"
+            }
+        ]
     }
 }

@@ -1,0 +1,117 @@
+
+{
+	"m": {
+		"prefix": "m",
+		"body": "mod ${1:MOD}${2:{${3:X} :: ${4:TRIV}\\}} {\n\t$0\n}",
+		"description": "New Module",
+		"scope": "source.cafeobj meta.module"
+	},
+	"m*": {
+		"prefix": "m*",
+		"body": "mod* ${1:MOD}${2:{${3:X} :: ${4:TRIV}\\}} {\n\t$0\n}",
+		"description": "New Module",
+		"scope": "source.cafeobj meta.module"
+	},
+	"m!": {
+		"prefix": "m!",
+		"body": "mod! ${1:MOD}${2:{${3:X} :: ${4:TRIV}\\}} {\n\t$0\n}",
+		"description": "New Module",
+		"scope": "source.cafeobj meta.module"
+	},
+	"open": {
+		"prefix": "open",
+		"body": "open ${1:MOD} .\n\t$0\nclose",
+		"description": "Proofscore",
+		"scope": "source.cafeobj meta.module.proofscore"
+	},
+	"v": {
+		"prefix": "v",
+		"body": "view ${1:VIEW} from ${2:SOURCE} to ${3:TARGET} {\n\t$0\n}",
+		"description": "New View",
+		"scope": "source.cafeobj meta.definition.view"
+	},
+	"inc": {
+		"prefix": "inc",
+		"body": "inc(${1:MODULE}) .",
+		"description": "Including ...",
+		"scope": "source.cafeobj meta.import"
+	},
+	"pr": {
+		"prefix": "pr",
+		"body": "pr(${1:MODULE}) .",
+		"description": "Protecting ...",
+		"scope": "source.cafeobj meta.import"
+	},
+	"ex": {
+		"prefix": "ex",
+		"body": "ex(${1:MODULE}) .",
+		"description": "Extending ...",
+		"scope": "source.cafeobj meta.import"
+	},
+	"sort": {
+		"prefix": "sort",
+		"body": "[${1:One}] .",
+		"description": "Sort ...",
+		"scope": "source.cafeobj meta.definition.sort"
+	},
+	"sorts": {
+		"prefix": "sorts",
+		"body": "[${1:One} ${2:Two}] .",
+		"description": "Sorts ...",
+		"scope": "source.cafeobj meta.definition.sort"
+	},
+	"sub": {
+		"prefix": "sub",
+		"body": "[${1:One} < ${2:Two}] .",
+		"description": "Subsort ...",
+		"scope": "source.cafeobj meta.definition.sort"
+	},
+	"subs": {
+		"prefix": "subs",
+		"body": "[${1:One} < ${2:Two} < ${3:Three}] .",
+		"description": "Subsorts ...",
+		"scope": "source.cafeobj meta.definition.sort"
+	},
+	"op": {
+		"prefix": "op",
+		"body": "op ${1:f} : ${2:Nat} -> ${3:Nat} .",
+		"description": "Operator ...",
+		"scope": "source.cafeobj meta.definition.operator"
+	},
+	"ops": {
+		"prefix": "ops",
+		"body": "ops ${1:f} ${2:g} : ${3:Nat} -> ${4:Nat} .",
+		"description": "Operators ...",
+		"scope": "source.cafeobj meta.definition.operator"
+	},
+	"var": {
+		"prefix": "var",
+		"body": "var ${1:X} : ${2:Elt} .",
+		"description": "Variable ...",
+		"scope": "source.cafeobj meta.definition.variable"
+	},
+	"vars": {
+		"prefix": "vars",
+		"body": "vars ${1:X} ${2:Y} : ${3:Elt} .",
+		"description": "Variables ...",
+		"scope": "source.cafeobj meta.definition.variable"
+	},
+	"eq": {
+		"prefix": "eq",
+		"body": "eq ${1:X} = ${2:Y} .",
+		"description": "Equation ...",
+		"scope": "source.cafeobj meta.equation"
+	},
+	"{": {
+		"prefix": "{",
+		"body": "{${1:constr}",
+		"description": "Insert Operator Attributes",
+		"scope": "source.cafeobj meta.definition.operator"
+	},
+	"none": {
+		"prefix": "none",
+		"body": "[${1::nonexec}] :",
+		"description": "Insert Statement Attributes",
+		"scope": "source.cafeobj meta.definition.attributes"
+	}
+}
