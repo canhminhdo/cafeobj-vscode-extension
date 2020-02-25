@@ -2,7 +2,7 @@
 
 Visual Studio Code Extension for CafeOBJ language, includes syntax highlighting and snippets.
 
-Based on the <span style="color:orange">maude.tmbundle</span> by [mkhl](https://github.com/mkhl/maude.tmbundle)
+Based on the **maude.tmbundle** by [mkhl](https://github.com/mkhl/maude.tmbundle)
 
 ## Features
 
