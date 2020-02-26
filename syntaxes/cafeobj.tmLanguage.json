@@ -66,7 +66,7 @@
 			"patterns": [
 				{
 					"name": "comment.line.cafeobj",
-					"begin": "\\s*(--|-->|\\*\\*|\\*\\*>)",
+					"begin": "\\s*(-- |--> |\\*\\*|\\*\\*>)",
 					"end": "$"
 				},
 				{
@@ -229,6 +229,9 @@
 				},
 				{
 					"include": "#variable"
+				},
+				{
+					"include": "#predicate"
 				}
 			]
 		},
@@ -354,17 +357,6 @@
 				}
 			},
 			"end": "$",
-			"endCaptures": {
-				"1": {
-					"name": "punctuation.terminator.cafeobj"
-				},
-				"2": {
-					"name": "support.type.sort.cafeobj"
-				},
-				"3": {
-					"name": "support.type.kind.cafeobj"
-				}
-			},
 			"name": "meta.definition.variable.cafeobj",
 			"patterns": [
 				{
@@ -703,6 +695,48 @@
 					},
 					"match": "(op)\\s+([a-z]\\S*)\\s+(->)\\s+([a-z]\\S*)\\s*(\\,)",
 					"name": "meta.mapping.operator.cafeobj"
+				},
+				{
+					"include": "#base"
+				}
+			]
+		},
+		"predicate": {
+			"begin": "\\b(pred)\\b",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.predicate.cafeobj"
+				}
+			},
+			"end": "$",
+			"name": "meta.definition.predicate.cafeobj",
+			"patterns": [
+				{
+					"begin": "(?<=\\s)(:)(?=\\s)",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.operator.member.cafeobj"
+						}
+					},
+					"end": "$",
+					"name": "meta.definition.predicate.sort.cafeobj",
+					"patterns": [
+						{
+							"match": "[^\\s,.:\\[\\]\\{\\}](?:,\\s*|\\S)*",
+							"name": "support.type.sort.cafeobj"
+						},
+						{
+							"match": "\\[[^\\]]+\\]",
+							"name": "support.type.kind.cafeobj"
+						},
+						{
+							"include": "#base"
+						}
+					]
+				},
+				{
+					"match": "\\S+",
+					"name": "predicate.other.var.cafeobj"
 				},
 				{
 					"include": "#base"
