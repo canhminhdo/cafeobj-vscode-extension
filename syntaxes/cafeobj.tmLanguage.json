@@ -271,12 +271,7 @@
 					"name": "keyword.control.operator.cafeobj"
 				}
 			},
-			"end": "(?<=[\\s\\]\\)\\}])(\\.)",
-			"endCaptures": {
-				"1": {
-					"name": "punctuation.terminator.cafeobj"
-				}
-			},
+			"end": "$",
 			"name": "meta.definition.operator.cafeobj",
 			"patterns": [
 				{
@@ -311,7 +306,7 @@
 							"name": "support.type.kind.cafeobj"
 						}
 					},
-					"end": "(?<=[\\s\\]\\)\\}])(?=\\.)",
+					"end": "$",
 					"name": "meta.definition.coarity.domain.cafeobj",
 					"patterns": [
 						{
@@ -362,10 +357,16 @@
 					"name": "keyword.control.variable.cafeobj"
 				}
 			},
-			"end": "(?<=[\\s])(\\.)",
+			"end": "(?<=[\\s\\]\\)\\}])(\\.)?",
 			"endCaptures": {
 				"1": {
 					"name": "punctuation.terminator.cafeobj"
+				},
+				"2": {
+					"name": "support.type.sort.cafeobj"
+				},
+				"3": {
+					"name": "support.type.kind.cafeobj"
 				}
 			},
 			"name": "meta.definition.variable.cafeobj",
@@ -377,7 +378,7 @@
 							"name": "keyword.operator.member.cafeobj"
 						}
 					},
-					"end": "(?<=[\\s])(?=\\.)",
+					"end": "(?<=[\\s\\]\\)\\}])(?=\\.)",
 					"endCaptures": {
 						"1": {
 							"name": "punctuation.terminator.cafeobj"
@@ -392,12 +393,18 @@
 						{
 							"match": "\\[[^\\]]+\\]",
 							"name": "support.type.kind.cafeobj"
+						},
+						{
+							"include": "#base"
 						}
 					]
 				},
 				{
 					"match": "\\S+",
 					"name": "variable.other.var.cafeobj"
+				},
+				{
+					"include": "#base"
 				}
 			]
 		},
