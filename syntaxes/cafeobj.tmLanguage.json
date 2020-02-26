@@ -40,10 +40,6 @@
 					"name": "support.type.sort.cafeobj"
 				},
 				{
-					"match": "(\\b(rem|divides|quo)\\b|(?<=[\\s\\(])(s|p)(?=[\\s\\(])|(?<=[\\s])(<|>|>=|<=)(?=[\\s]))",
-					"name": "support.type.operator.cafeobj"
-				},
-				{
 					"match": "\\b(mod(!|\\*)?|eval|view)\\b",
 					"name": "keyword.control.cafeobj"
 				},
@@ -357,7 +353,7 @@
 					"name": "keyword.control.variable.cafeobj"
 				}
 			},
-			"end": "(?<=[\\s\\]\\)\\}])(\\.)?",
+			"end": "$",
 			"endCaptures": {
 				"1": {
 					"name": "punctuation.terminator.cafeobj"
@@ -378,12 +374,7 @@
 							"name": "keyword.operator.member.cafeobj"
 						}
 					},
-					"end": "(?<=[\\s\\]\\)\\}])(?=\\.)",
-					"endCaptures": {
-						"1": {
-							"name": "punctuation.terminator.cafeobj"
-						}
-					},
+					"end": "$",
 					"name": "meta.definition.variable.sort.cafeobj",
 					"patterns": [
 						{
