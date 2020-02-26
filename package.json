@@ -2,7 +2,9 @@
     "name": "cafeobj",
     "displayName": "CafeOBJ",
     "description": "Language Cafeobj Support",
-    "version": "0.0.1",
+    "publisher": "canhminhdo",
+    "version": "1.0.0",
+    "icon": "icons/cafeobj.png",
     "engines": {
         "vscode": "^1.42.0"
     },
@@ -45,5 +47,9 @@
                 "path": "./snippets/cafeobj.snippets.json"
             }
         ]
-    }
+    },
+    "repository": {
+		"type": "git",
+		"url": "https://github.com/minhcanh99/cafeobj-vscode-extension.git"
+	}
 }

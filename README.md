@@ -2,13 +2,15 @@
 
 Visual Studio Code Extension for CafeOBJ language, includes syntax highlighting and snippets.
 
-Based on the **maude.tmbundle** by [mkhl](https://github.com/mkhl/maude.tmbundle)
+Based on the **maude.tmbundle** by [mkhl](https://github.com/mkhl/maude.tmbundle).
+
+Development and maintenance by members of Ogata Laboratory.
 
 ## Features
 
 Providing highlightinng for the CafeOBJ language declarations such as module, import module, sort, operation, equation, view, proofscore.
 
-Including some snippets to help you beeter work on Visual Studio Code.
+Including some snippets to help you better work on Visual Studio Code.
 
 ## Known Issues
 
