@@ -40,6 +40,10 @@
 					"name": "support.type.sort.cafeobj"
 				},
 				{
+					"match": "(\\b(rem|divides|quo)\\b|(?<=[\\s])(<|>|>=|<=)(?=[\\s]))",
+					"name": "support.type.operator.cafeobj"
+				},
+				{
 					"match": "\\b(mod(!|\\*)?|eval|view)\\b",
 					"name": "keyword.control.cafeobj"
 				},
@@ -79,7 +83,7 @@
 		"module": {
 			"patterns": [
 				{
-					"begin": "(mod(?:ule)?(?:!|\\*)?)\\s+([^,.;\\[\\]\\(\\)\\{\\}\\s]+(?:[^,.;\\[\\]]+)?)\\s+(\\{)",
+					"begin": "(mod(?:ule)?(?:!|\\*)?)\\s+([^,.;\\[\\]\\(\\)\\{\\}\\s]+(?:(.)+)?)\\s+(\\{)",
 					"beginCaptures": {
 						"1": {
 							"name": "keyword.control.module.cafeobj"
