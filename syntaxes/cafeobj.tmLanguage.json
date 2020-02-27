@@ -40,7 +40,7 @@
 					"name": "support.type.sort.cafeobj"
 				},
 				{
-					"match": "(\\b(rem|divides|quo)\\b|(?<=[\\s\\(])(s|p)(?=[\\s\\(])|(?<=[\\s])(<|>|>=|<=)(?=[\\s]))",
+					"match": "(\\b(rem|divides|quo)\\b|(?<=[\\s])(<|>|>=|<=)(?=[\\s]))",
 					"name": "support.type.operator.cafeobj"
 				},
 				{
@@ -70,7 +70,7 @@
 			"patterns": [
 				{
 					"name": "comment.line.cafeobj",
-					"begin": "\\s*(--|-->|\\*\\*|\\*\\*>)",
+					"begin": "\\s*(-- |--> |\\*\\*|\\*\\*>)",
 					"end": "$"
 				},
 				{
@@ -83,7 +83,7 @@
 		"module": {
 			"patterns": [
 				{
-					"begin": "(mod(?:ule)?(?:!|\\*)?)\\s+([^,.;\\[\\]\\(\\)\\{\\}\\s]+(?:[^,.;\\[\\]]+)?)\\s+(\\{)",
+					"begin": "(mod(?:ule)?(?:!|\\*)?)\\s+([^,.;\\[\\]\\(\\)\\{\\}\\s]+(?:(.)+)?)\\s+(\\{)",
 					"beginCaptures": {
 						"1": {
 							"name": "keyword.control.module.cafeobj"
@@ -233,6 +233,9 @@
 				},
 				{
 					"include": "#variable"
+				},
+				{
+					"include": "#predicate"
 				}
 			]
 		},
@@ -271,12 +274,7 @@
 					"name": "keyword.control.operator.cafeobj"
 				}
 			},
-			"end": "(?<=[\\s\\]\\)\\}])(\\.)",
-			"endCaptures": {
-				"1": {
-					"name": "punctuation.terminator.cafeobj"
-				}
-			},
+			"end": "$",
 			"name": "meta.definition.operator.cafeobj",
 			"patterns": [
 				{
@@ -311,7 +309,7 @@
 							"name": "support.type.kind.cafeobj"
 						}
 					},
-					"end": "(?<=[\\s\\]\\)\\}])(?=\\.)",
+					"end": "$",
 					"name": "meta.definition.coarity.domain.cafeobj",
 					"patterns": [
 						{
@@ -362,12 +360,7 @@
 					"name": "keyword.control.variable.cafeobj"
 				}
 			},
-			"end": "(?<=[\\s])(\\.)",
-			"endCaptures": {
-				"1": {
-					"name": "punctuation.terminator.cafeobj"
-				}
-			},
+			"end": "$",
 			"name": "meta.definition.variable.cafeobj",
 			"patterns": [
 				{
@@ -377,12 +370,7 @@
 							"name": "keyword.operator.member.cafeobj"
 						}
 					},
-					"end": "(?<=[\\s])(?=\\.)",
-					"endCaptures": {
-						"1": {
-							"name": "punctuation.terminator.cafeobj"
-						}
-					},
+					"end": "$",
 					"name": "meta.definition.variable.sort.cafeobj",
 					"patterns": [
 						{
@@ -392,12 +380,18 @@
 						{
 							"match": "\\[[^\\]]+\\]",
 							"name": "support.type.kind.cafeobj"
+						},
+						{
+							"include": "#base"
 						}
 					]
 				},
 				{
 					"match": "\\S+",
 					"name": "variable.other.var.cafeobj"
+				},
+				{
+					"include": "#base"
 				}
 			]
 		},
@@ -705,6 +699,48 @@
 					},
 					"match": "(op)\\s+([a-z]\\S*)\\s+(->)\\s+([a-z]\\S*)\\s*(\\,)",
 					"name": "meta.mapping.operator.cafeobj"
+				},
+				{
+					"include": "#base"
+				}
+			]
+		},
+		"predicate": {
+			"begin": "\\b(pred)\\b",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.predicate.cafeobj"
+				}
+			},
+			"end": "$",
+			"name": "meta.definition.predicate.cafeobj",
+			"patterns": [
+				{
+					"begin": "(?<=\\s)(:)(?=\\s)",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.operator.member.cafeobj"
+						}
+					},
+					"end": "$",
+					"name": "meta.definition.predicate.sort.cafeobj",
+					"patterns": [
+						{
+							"match": "[^\\s,.:\\[\\]\\{\\}](?:,\\s*|\\S)*",
+							"name": "support.type.sort.cafeobj"
+						},
+						{
+							"match": "\\[[^\\]]+\\]",
+							"name": "support.type.kind.cafeobj"
+						},
+						{
+							"include": "#base"
+						}
+					]
+				},
+				{
+					"match": "\\S+",
+					"name": "predicate.other.var.cafeobj"
 				},
 				{
 					"include": "#base"
