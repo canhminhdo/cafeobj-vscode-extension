@@ -214,6 +214,9 @@
 			"name": "meta.import.module.cafeobj",
 			"patterns": [
 				{
+					"include": "#nested-brackets"
+				},
+				{
 					"match": "\\s+\\+\\s+",
 					"name": "keyword.operator.sum.import.cafeobj"
 				},
