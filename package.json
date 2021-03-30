@@ -3,7 +3,7 @@
     "displayName": "CafeOBJ",
     "description": "Language Cafeobj Support",
     "publisher": "canhminhdo",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "icon": "icons/cafeobj.png",
     "engines": {
         "vscode": "^1.42.0"
@@ -42,6 +42,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/minhcanh99/cafeobj-vscode-extension.git"
+        "url": "https://github.com/canhminhdo/cafeobj-vscode-extension.git"
     }
 }
