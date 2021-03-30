@@ -3,7 +3,7 @@
     "displayName": "CafeOBJ",
     "description": "Language Cafeobj Support",
     "publisher": "canhminhdo",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "icon": "icons/cafeobj.png",
     "engines": {
         "vscode": "^1.42.0"
@@ -14,42 +14,34 @@
         "Themes"
     ],
     "contributes": {
-        "iconThemes": [
-            {
-                "id": "icon-cafeobj",
-                "label": "Cafeobj Icon",
-                "path": "./icons/vs-cafeobj-icon-theme.json"
-            }
-        ],
-        "languages": [
-            {
-                "id": "cafeobj",
-                "aliases": [
-                    "CafeOBJ",
-                    "cafeobj"
-                ],
-                "extensions": [
-                    ".cafe"
-                ],
-                "configuration": "./language-configuration.json"
-            }
-        ],
-        "grammars": [
-            {
-                "language": "cafeobj",
-                "scopeName": "source.cafeobj",
-                "path": "./syntaxes/cafeobj.tmLanguage.json"
-            }
-        ],
-        "snippets": [
-            {
-                "language": "cafeobj",
-                "path": "./snippets/cafeobj.snippets.json"
-            }
-        ]
+        "iconThemes": [{
+            "id": "icon-cafeobj",
+            "label": "Cafeobj Icon",
+            "path": "./icons/vs-cafeobj-icon-theme.json"
+        }],
+        "languages": [{
+            "id": "cafeobj",
+            "aliases": [
+                "CafeOBJ",
+                "cafeobj"
+            ],
+            "extensions": [
+                ".cafe"
+            ],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "cafeobj",
+            "scopeName": "source.cafeobj",
+            "path": "./syntaxes/cafeobj.tmLanguage.json"
+        }],
+        "snippets": [{
+            "language": "cafeobj",
+            "path": "./snippets/cafeobj.snippets.json"
+        }]
     },
     "repository": {
-		"type": "git",
-		"url": "https://github.com/minhcanh99/cafeobj-vscode-extension.git"
-	}
+        "type": "git",
+        "url": "https://github.com/minhcanh99/cafeobj-vscode-extension.git"
+    }
 }
