@@ -119,5 +119,11 @@
 		"body": "[${1::nonexec}] :",
 		"description": "Insert Statement Attributes",
 		"scope": "source.cafeobj meta.definition.attributes"
+	},
+	"single comment": {
+		"prefix": "-",
+		"body": "-- ${1:Comment}",
+		"description": "Single-line comment ...",
+		"scope": "source.cafeobj meta.singleComment"
 	}
 }
