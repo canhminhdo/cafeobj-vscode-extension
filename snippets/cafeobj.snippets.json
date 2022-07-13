@@ -102,6 +102,12 @@
 		"description": "Equation ...",
 		"scope": "source.cafeobj meta.equation"
 	},
+	"red": {
+		"prefix": "r",
+		"body": "red ${1:Term} .",
+		"description": "Reduce ...",
+		"scope": "source.cafeobj meta.reduce"
+	},
 	"{": {
 		"prefix": "{",
 		"body": "{${1:constr}",
