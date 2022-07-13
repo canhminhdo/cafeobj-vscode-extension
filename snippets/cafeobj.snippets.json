@@ -19,7 +19,7 @@
 		"scope": "source.cafeobj meta.module"
 	},
 	"open": {
-		"prefix": "open",
+		"prefix": ["o", "open"],
 		"body": "open ${1:MOD} .\n\t$0\nclose",
 		"description": "Proofscore",
 		"scope": "source.cafeobj meta.module.proofscore"
