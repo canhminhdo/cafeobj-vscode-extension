@@ -18,4 +18,4 @@ Checking the known issues [here](https://github.com/canhminhdo/cafeobj-vscode-ex
 
 ## Release Notes
 
-### 1.0.5
+### 1.0.6
