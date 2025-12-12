@@ -3,7 +3,7 @@
     "displayName": "CafeOBJ",
     "description": "Language Cafeobj Support",
     "publisher": "canhminhdo",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "icon": "icons/cafeobj.png",
     "engines": {
         "vscode": "^1.42.0"

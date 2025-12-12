@@ -70,7 +70,7 @@
 			"patterns": [
 				{
 					"name": "comment.line.cafeobj",
-					"begin": "\\s*(-- |--> |\\*\\*|\\*\\*>)",
+					"begin": "\\s*(--\\s*|-->\\s*|\\*\\*|\\*\\*>)",
 					"end": "$"
 				},
 				{
